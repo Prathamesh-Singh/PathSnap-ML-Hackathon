@@ -1,0 +1,63 @@
+{
+  "student_test": {
+    "trips": 10,
+    "gps_fixes": 19160,
+    "fixes_per_trip_min_median_max": [
+      262,
+      1420,
+      3958
+    ],
+    "nan_fixes": 0,
+    "bad_coords": 0,
+    "non_increasing_timestamps": 0,
+    "share_steps_exactly_1s": 0.9862118944121373,
+    "trips_with_gap_over_60s": 1,
+    "largest_gap_s": 210.0,
+    "road_arcs_total": 185041,
+    "road_nodes_total": 90689,
+    "isolated_nodes_total": 0,
+    "trips_with_multiple_weak_components": 10,
+    "median_largest_strong_component_share": 0.9609677685847287,
+    "route_breaks_total": 1,
+    "route_uturns_total": 8,
+    "gps_dev_median_m": 5.162782931357036,
+    "gps_dev_p90_m": 13.337257073128718,
+    "gps_dev_p99_m": 28.053850185004357,
+    "trips_with_median_dev_over_50m": [],
+    "trips_end_offset_over_200m": [],
+    "crlf_track_files": 10
+  },
+  "train": {
+    "trips": 80,
+    "gps_fixes": 208417,
+    "fixes_per_trip_min_median_max": [
+      361,
+      1529,
+      19313
+    ],
+    "nan_fixes": 0,
+    "bad_coords": 0,
+    "non_increasing_timestamps": 0,
+    "share_steps_exactly_1s": 0.9650271653913152,
+    "trips_with_gap_over_60s": 22,
+    "largest_gap_s": 153064.0,
+    "road_arcs_total": 3876904,
+    "road_nodes_total": 1933485,
+    "isolated_nodes_total": 0,
+    "trips_with_multiple_weak_components": 79,
+    "median_largest_strong_component_share": 0.9641911601989523,
+    "route_breaks_total": 13,
+    "route_uturns_total": 46,
+    "gps_dev_median_m": 5.023560376284573,
+    "gps_dev_p90_m": 14.552963847174222,
+    "gps_dev_p99_m": 139.7811676207902,
+    "trips_with_median_dev_over_50m": [
+      "00000033",
+      "00000054"
+    ],
+    "trips_end_offset_over_200m": [
+      "00000002"
+    ],
+    "crlf_track_files": 80
+  }
+}
