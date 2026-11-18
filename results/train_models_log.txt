@@ -1,0 +1,57 @@
+=== LogisticRegression
+  fold 0: f1=0.9622 top1=0.9628
+  fold 1: f1=0.9557 top1=0.9564
+  fold 2: f1=0.9527 top1=0.9485
+  fold 3: f1=0.9562 top1=0.9682
+  fold 4: f1=0.9356 top1=0.9264
+{'cv_f1_macro': np.float64(0.9525), 'cv_f1_macro_std': np.float64(0.01), 'cv_top1': np.float64(0.9525), 'cv_log_loss': np.float64(0.0723), 'cv_fit_secs_per_fold': 1.5042, 'test_accuracy': 0.9785, 'test_precision_macro': 0.949, 'test_recall_macro': 0.9636, 'test_f1_macro': 0.9561, 'test_log_loss': 0.0654, 'test_top1': 0.9491, 'test_continuity': 0.7888}
+=== GaussianNB
+  fold 0: f1=0.9096 top1=0.9589
+  fold 1: f1=0.9094 top1=0.9438
+  fold 2: f1=0.9131 top1=0.9413
+  fold 3: f1=0.9115 top1=0.9564
+  fold 4: f1=0.9035 top1=0.9215
+{'cv_f1_macro': np.float64(0.9094), 'cv_f1_macro_std': np.float64(0.0037), 'cv_top1': np.float64(0.9444), 'cv_log_loss': np.float64(0.2913), 'cv_fit_secs_per_fold': 0.2063, 'test_accuracy': 0.953, 'test_precision_macro': 0.8777, 'test_recall_macro': 0.9603, 'test_f1_macro': 0.9124, 'test_log_loss': 0.2831, 'test_top1': 0.9463, 'test_continuity': 0.7992}
+=== KNN
+  fold 0: f1=0.9666 top1=0.9600
+  fold 1: f1=0.9625 top1=0.9568
+  fold 2: f1=0.9573 top1=0.9458
+  fold 3: f1=0.9660 top1=0.9663
+  fold 4: f1=0.9449 top1=0.9256
+{'cv_f1_macro': np.float64(0.9594), 'cv_f1_macro_std': np.float64(0.0089), 'cv_top1': np.float64(0.9509), 'cv_log_loss': np.float64(0.0688), 'cv_fit_secs_per_fold': 0.3246, 'test_accuracy': 0.9804, 'test_precision_macro': 0.9554, 'test_recall_macro': 0.9641, 'test_f1_macro': 0.9597, 'test_log_loss': 0.0679, 'test_top1': 0.9494, 'test_continuity': 0.7945}
+=== RandomForest
+  fold 0: f1=0.9799 top1=0.9710
+  fold 1: f1=0.9766 top1=0.9649
+  fold 2: f1=0.9742 top1=0.9610
+  fold 3: f1=0.9825 top1=0.9783
+  fold 4: f1=0.9559 top1=0.9368
+{'cv_f1_macro': np.float64(0.9738), 'cv_f1_macro_std': np.float64(0.0105), 'cv_top1': np.float64(0.9624), 'cv_log_loss': np.float64(0.0384), 'cv_fit_secs_per_fold': 124.4492, 'test_accuracy': 0.9865, 'test_precision_macro': 0.9677, 'test_recall_macro': 0.9769, 'test_f1_macro': 0.9723, 'test_log_loss': 0.0387, 'test_top1': 0.9612, 'test_continuity': 0.8003}
+=== HistGradientBoosting
+  fold 0: f1=0.9794 top1=0.9712
+  fold 1: f1=0.9764 top1=0.9662
+  fold 2: f1=0.9741 top1=0.9627
+  fold 3: f1=0.9836 top1=0.9809
+  fold 4: f1=0.9603 top1=0.9429
+{'cv_f1_macro': np.float64(0.9748), 'cv_f1_macro_std': np.float64(0.0088), 'cv_top1': np.float64(0.9648), 'cv_log_loss': np.float64(0.0374), 'cv_fit_secs_per_fold': 2.2882, 'test_accuracy': 0.9864, 'test_precision_macro': 0.9632, 'test_recall_macro': 0.9819, 'test_f1_macro': 0.9723, 'test_log_loss': 0.0372, 'test_top1': 0.963, 'test_continuity': 0.8042}
+=== MLP
+  fold 0: f1=0.9771 top1=0.9686
+  fold 1: f1=0.9727 top1=0.9650
+  fold 2: f1=0.9700 top1=0.9560
+  fold 3: f1=0.9805 top1=0.9764
+  fold 4: f1=0.9546 top1=0.9375
+{'cv_f1_macro': np.float64(0.971), 'cv_f1_macro_std': np.float64(0.01), 'cv_top1': np.float64(0.9607), 'cv_log_loss': np.float64(0.0423), 'cv_fit_secs_per_fold': 100.4507, 'test_accuracy': 0.986, 'test_precision_macro': 0.9656, 'test_recall_macro': 0.9775, 'test_f1_macro': 0.9714, 'test_log_loss': 0.0399, 'test_top1': 0.9601, 'test_continuity': 0.8041}
+=== LightGBM
+  fold 0: f1=0.9804 top1=0.9738
+  fold 1: f1=0.9779 top1=0.9700
+  fold 2: f1=0.9763 top1=0.9660
+  fold 3: f1=0.9848 top1=0.9822
+  fold 4: f1=0.9608 top1=0.9452
+{'cv_f1_macro': np.float64(0.976), 'cv_f1_macro_std': np.float64(0.0091), 'cv_top1': np.float64(0.9674), 'cv_log_loss': np.float64(0.034), 'cv_fit_secs_per_fold': 4.9976, 'test_accuracy': 0.9855, 'test_precision_macro': 0.9611, 'test_recall_macro': 0.9808, 'test_f1_macro': 0.9706, 'test_log_loss': 0.0583, 'test_top1': 0.9536, 'test_continuity': 0.7844}
+                  model  cv_f1_macro  cv_top1  cv_log_loss  test_f1_macro  test_top1  test_log_loss  test_continuity  infer_secs_test
+0    LogisticRegression       0.9525   0.9525       0.0723         0.9561     0.9491         0.0654           0.7888           0.0077
+1            GaussianNB       0.9094   0.9444       0.2913         0.9124     0.9463         0.2831           0.7992           0.0263
+2                   KNN       0.9594   0.9509       0.0688         0.9597     0.9494         0.0679           0.7945          52.0687
+3          RandomForest       0.9738   0.9624       0.0384         0.9723     0.9612         0.0387           0.8003           0.1829
+4  HistGradientBoosting       0.9748   0.9648       0.0374         0.9723     0.9630         0.0372           0.8042           0.0548
+5                   MLP       0.9710   0.9607       0.0423         0.9714     0.9601         0.0399           0.8041           0.0264
+6              LightGBM       0.9760   0.9674       0.0340         0.9706     0.9536         0.0583           0.7844           0.2368

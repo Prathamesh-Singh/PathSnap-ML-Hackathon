@@ -1,0 +1,43 @@
+{
+  "model": "HistGradientBoosting",
+  "objective": "mean 5-fold GroupKFold observation-level Top-1 accuracy",
+  "n_trials": 30,
+  "n_pruned": 1,
+  "search_secs": 1729.792202949524,
+  "best_params": {
+    "learning_rate": 0.0759566053099434,
+    "max_iter": 650,
+    "max_leaf_nodes": 46,
+    "min_samples_leaf": 136,
+    "l2_regularization": 0.002680757999697768
+  },
+  "best_cv_top1": 0.967021068692525,
+  "untuned": {
+    "cv_top1": 0.9647783380891225,
+    "cv_f1_macro": 0.9747870384449012,
+    "cv_log_loss": 0.03742697477365488,
+    "test_accuracy": 0.9863556791267635,
+    "test_precision_macro": 0.9632474986990391,
+    "test_recall_macro": 0.9818519222646034,
+    "test_f1_macro": 0.9722753300092114,
+    "test_log_loss": 0.03715291201029486,
+    "test_top1": 0.9629901062660315,
+    "test_continuity": 0.8041892365077509,
+    "fit_secs": 2.7142651081085205,
+    "infer_secs_test": 0.0435333251953125
+  },
+  "tuned": {
+    "cv_top1": 0.967021068692525,
+    "cv_f1_macro": 0.9756724335001736,
+    "cv_log_loss": 0.03446705638221982,
+    "test_accuracy": 0.9876686232107919,
+    "test_precision_macro": 0.9670669378296975,
+    "test_recall_macro": 0.9830762355562561,
+    "test_f1_macro": 0.9748700522679897,
+    "test_log_loss": 0.03492090410249336,
+    "test_top1": 0.9657383657017222,
+    "test_continuity": 0.8053981612882113,
+    "fit_secs": 8.186675310134888,
+    "infer_secs_test": 0.11657214164733887
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "config": {
+    "radius": 60.0,
+    "k": 12,
+    "min_spacing": 35.0
+  },
+  "train": {
+    "trips": 80,
+    "observations": 47867,
+    "rows": 343949,
+    "positive_rate": 0.13808442530724033,
+    "candidate_miss_rate": 0.007792424843838135,
+    "build_secs": 36.494468212127686
+  },
+  "student_test": {
+    "trips": 10,
+    "observations": 5458,
+    "rows": 38844,
+    "positive_rate": 0.14027906497786016,
+    "candidate_miss_rate": 0.0016489556614144375,
+    "build_secs": 11.292654991149902
+  }
+}

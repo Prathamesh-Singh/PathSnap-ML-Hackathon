@@ -1,0 +1,35 @@
+{
+  "candidates": {
+    "radius": 60.0,
+    "k": 12,
+    "min_spacing": 35.0
+  },
+  "decoder": {
+    "emission_weight": 0.5,
+    "beta": 10.0,
+    "uturn_penalty": 4.0,
+    "back_tol": 40.0
+  },
+  "model_file": "final_model.joblib",
+  "model_name": "HistGradientBoosting (Bayesian-tuned)",
+  "features": [
+    "dist",
+    "dist_rank",
+    "dist_gap",
+    "dist_z",
+    "n_cands",
+    "heading_diff",
+    "heading_ok",
+    "speed",
+    "t_along",
+    "arc_len",
+    "two_way",
+    "deg_out_end",
+    "deg_in_start",
+    "ctx_prev",
+    "ctx_next",
+    "ctx_mean",
+    "turn_angle",
+    "dt_prev"
+  ]
+}

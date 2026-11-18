@@ -1,0 +1,22 @@
+# PathSnap API console log - end-to-end test, all 10 student-testing trips requested from the UI
+# (API: python -m uvicorn api.app:app --host 0.0.0.0 --port 8000 ; UI: python ui/serve.py)
+2026-11-18 11:20:52,542 | INFO | POST /predict/00000052  received
+2026-11-18 11:20:52,819 | INFO | POST /predict/00000052  done in 0.24s | arcs=93 | F1=0.9984 P=1.0000 R=0.9969 RMF=0.0031 top1=1.0000
+2026-11-18 11:21:08,282 | INFO | POST /predict/00000000  received
+2026-11-18 11:21:09,312 | INFO | POST /predict/00000000  done in 0.94s | arcs=180 | F1=0.9995 P=0.9990 R=1.0000 RMF=0.0010 top1=0.9991
+2026-11-18 11:21:18,323 | INFO | POST /predict/00000007  received
+2026-11-18 11:21:18,885 | INFO | POST /predict/00000007  done in 0.50s | arcs=121 | F1=0.9965 P=1.0000 R=0.9930 RMF=0.0070 top1=0.9979
+2026-11-18 11:21:24,360 | INFO | POST /predict/00000009  received
+2026-11-18 11:21:24,993 | INFO | POST /predict/00000009  done in 0.51s | arcs=436 | F1=0.9752 P=0.9609 R=0.9899 RMF=0.0504 top1=0.9594
+2026-11-18 11:21:32,386 | INFO | POST /predict/00000040  received
+2026-11-18 11:21:33,675 | INFO | POST /predict/00000040  done in 1.16s | arcs=309 | F1=0.9981 P=0.9989 R=0.9974 RMF=0.0037 top1=0.9990
+2026-11-18 11:21:42,475 | INFO | POST /predict/00000056  received
+2026-11-18 11:21:45,338 | INFO | POST /predict/00000056  done in 1.81s | arcs=1320 | F1=0.9920 P=0.9856 R=0.9984 RMF=0.0162 top1=0.9908
+2026-11-18 11:21:58,522 | INFO | POST /predict/00000065  received
+2026-11-18 11:21:58,969 | INFO | POST /predict/00000065  done in 0.42s | arcs=143 | F1=0.9916 P=1.0000 R=0.9832 RMF=0.0168 top1=0.9588
+2026-11-18 11:22:04,547 | INFO | POST /predict/00000076  received
+2026-11-18 11:22:06,608 | INFO | POST /predict/00000076  done in 1.87s | arcs=392 | F1=0.9860 P=0.9739 R=0.9984 RMF=0.0283 top1=0.9880
+2026-11-18 11:22:14,588 | INFO | POST /predict/00000077  received
+2026-11-18 11:22:15,295 | INFO | POST /predict/00000077  done in 0.63s | arcs=265 | F1=0.9918 P=1.0000 R=0.9837 RMF=0.0163 top1=0.9848
+2026-11-18 11:22:22,618 | INFO | POST /predict/00000091  received
+2026-11-18 11:22:23,135 | INFO | POST /predict/00000091  done in 0.48s | arcs=232 | F1=0.9960 P=0.9965 R=0.9956 RMF=0.0079 top1=0.9865

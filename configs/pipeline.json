@@ -1,0 +1,4 @@
+{
+  "candidates": {"radius": 60.0, "k": 12, "min_spacing": 35.0},
+  "_note": "candidate settings come from tuning the geometric HMM on the 80 training trips (tune.py, results/hmm_baseline_tuning_log.txt)"
+}

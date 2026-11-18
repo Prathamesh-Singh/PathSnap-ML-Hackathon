@@ -1,0 +1,30 @@
+# raw dataset and course material are not ours to redistribute
+data/
+materials/
+# derived / regenerable
+cache/
+__pycache__/
+*.pyc
+.venv/
+# per-model experiment weights are large; only the final model is committed
+artifacts/models/
+
+# stray duplicates from unzipping (safe to delete locally)
+/Student folder/
+/*.pdf
+/figures/
+/scripts/train_run*.txt
+
+# per-member distribution zips (shared separately)
+team_packages/
+
+# personal TA-demo folder (copies of files already in the repo)
+LightGBM_E_S_Sukruth/
+
+# per-member study zips (shared separately)
+study_packs/
+
+# per-member push packages and their helper files (extracted into the repo root, never committed)
+push_packages/
+/PUSH_*.md
+/push_*.bat

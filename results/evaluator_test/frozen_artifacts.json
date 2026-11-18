@@ -1,0 +1,16 @@
+{
+  "frozen_at": "2026-11-18 12:40:24 India Standard Time",
+  "note": "Fingerprints of every model/config file taken BEFORE the first run on the evaluator-testing trips. Nothing was retrained, tuned or re-selected afterwards.",
+  "sha256": {
+    "artifacts/models/GaussianNB.joblib": "29bc3c2c99a219d600c10d98f8061a00e7c27f8e1f8574a9f06669166d55f6f4",
+    "artifacts/models/HistGradientBoosting.joblib": "bc26485d47e814a7fb3645efab15d13a85b5ead3b39dd9ae741722e28a04e734",
+    "artifacts/models/KNN.joblib": "b49d6a8043346e1d1c0da0a3716dd9fb735dd423455a2e6d6e055fdfadc76267",
+    "artifacts/models/LightGBM.joblib": "cc583f27a1454c5647ee453b5bd737e35b4612e4806671e86f747dacb9297927",
+    "artifacts/models/LogisticRegression.joblib": "1117818b435fd6e5f7e46fde412a0f1165c023840910d557b5fffbd0af215c1b",
+    "artifacts/models/MLP.joblib": "14c9589714856a901147922bc99939339094d0dc6e9b4c77f27b44ecd90cfe2e",
+    "artifacts/models/RandomForest.joblib": "a28e79d8412de7127964ce4f29492e379e446667ab28443ac90429efa667437b",
+    "artifacts/final_config.json": "e433b7fa55825703a81c4b4ad0ff25b052c56166dc95470a0a0090e239a6960e",
+    "artifacts/final_model.joblib": "36c47e591d29b75f6582c2bf13fdec732df7b3fb74dbf42672447ad2b0ce80d5",
+    "configs/pipeline.json": "29383e335b66b157b68ec0512b6ec3973e20baea2db7e5551e20691572ea9361"
+  }
+}

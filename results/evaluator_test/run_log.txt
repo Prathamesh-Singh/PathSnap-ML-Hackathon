@@ -1,0 +1,25 @@
+10 evaluator trips
+candidate rows 33809, observations 4382, candidate miss rate 0.0007
+LogisticRegression                            Top-1=0.9585  macroF1=0.9606  logloss=0.0593  (0.1s)
+GaussianNB                                    Top-1=0.9516  macroF1=0.9148  logloss=0.2198  (0.0s)
+KNN                                           Top-1=0.9596  macroF1=0.9680  logloss=0.0513  (14.0s)
+RandomForest                                  Top-1=0.9696  macroF1=0.9812  logloss=0.0284  (0.3s)
+HistGradientBoosting                          Top-1=0.9728  macroF1=0.9811  logloss=0.0269  (0.1s)
+MLP                                           Top-1=0.9694  macroF1=0.9780  logloss=0.0299  (0.0s)
+LightGBM                                      Top-1=0.9601  macroF1=0.9779  logloss=0.0477  (0.3s)
+HistGradientBoosting (Bayesian-tuned, final)  Top-1=0.9744  macroF1=0.9828  logloss=0.0240  (0.1s)
+    trip     f1  precision  recall    rmf  pointwise_top1  seconds
+00000015 0.9962     0.9924  1.0000 0.0077          0.9789   0.8760
+00000017 0.9964     0.9947  0.9981 0.0072          0.9933   2.6777
+00000023 0.9856     0.9831  0.9881 0.0289          0.9851   0.8919
+00000030 0.9843     0.9802  0.9884 0.0316          0.9761   1.5322
+00000049 0.9994     1.0000  0.9988 0.0012          1.0000   2.4331
+00000059 1.0000     1.0000  1.0000 0.0000          0.9900   1.5804
+00000067 0.9974     1.0000  0.9949 0.0051          0.9811   0.5193
+00000073 1.0000     1.0000  1.0000 0.0000          0.9938   1.1847
+00000087 0.9977     1.0000  0.9954 0.0046          1.0000   5.4899
+00000094 0.9985     0.9979  0.9990 0.0030          0.9949   1.7094
+                              f1  precision  recall     rmf  arc_acc  pointwise_top1  route_connectivity
+mode                                                                                                    
+classifier + HMM (final)  0.9955     0.9948  0.9963  0.0089   0.9678          0.9893              1.0000
+classifier only           0.7767     0.7227  0.9954  2.1437   0.6946          0.9653              0.9999

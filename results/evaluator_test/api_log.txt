@@ -1,0 +1,23 @@
+# PathSnap API console log - evaluator-testing trips (PATHSNAP_TRIPS_DIR=data\evaluator_test, port 8001)
+2026-11-18 12:44:09,920 | INFO | model loaded: HistGradientBoosting (Bayesian-tuned) + HMM/Viterbi | trips dir: data\evaluator_test
+2026-11-18 12:44:12,794 | INFO | GET /trips -> 10 trips
+2026-11-18 12:44:14,840 | INFO | POST /predict/00000015  received
+2026-11-18 12:44:15,977 | INFO | POST /predict/00000015  done in 1.04s | arcs=137 | F1=0.9962 P=0.9924 R=1.0000 RMF=0.0077 top1=0.9789
+2026-11-18 12:44:18,039 | INFO | POST /predict/00000017  received
+2026-11-18 12:44:23,384 | INFO | POST /predict/00000017  done in 4.49s | arcs=803 | F1=0.9964 P=0.9947 R=0.9981 RMF=0.0072 top1=0.9933
+2026-11-18 12:44:25,448 | INFO | POST /predict/00000023  received
+2026-11-18 12:44:26,531 | INFO | POST /predict/00000023  done in 1.02s | arcs=76 | F1=0.9856 P=0.9831 R=0.9881 RMF=0.0289 top1=0.9851
+2026-11-18 12:44:28,601 | INFO | POST /predict/00000030  received
+2026-11-18 12:44:30,330 | INFO | POST /predict/00000030  done in 1.56s | arcs=337 | F1=0.9843 P=0.9802 R=0.9884 RMF=0.0316 top1=0.9761
+2026-11-18 12:44:32,395 | INFO | POST /predict/00000049  received
+2026-11-18 12:44:37,130 | INFO | POST /predict/00000049  done in 4.14s | arcs=409 | F1=0.9994 P=1.0000 R=0.9988 RMF=0.0012 top1=1.0000
+2026-11-18 12:44:39,211 | INFO | POST /predict/00000059  received
+2026-11-18 12:44:41,370 | INFO | POST /predict/00000059  done in 1.90s | arcs=455 | F1=1.0000 P=1.0000 R=1.0000 RMF=0.0000 top1=0.9900
+2026-11-18 12:44:43,437 | INFO | POST /predict/00000067  received
+2026-11-18 12:44:44,017 | INFO | POST /predict/00000067  done in 0.53s | arcs=81 | F1=0.9974 P=1.0000 R=0.9949 RMF=0.0051 top1=0.9811
+2026-11-18 12:44:46,102 | INFO | POST /predict/00000073  received
+2026-11-18 12:44:48,127 | INFO | POST /predict/00000073  done in 1.87s | arcs=238 | F1=1.0000 P=1.0000 R=1.0000 RMF=0.0000 top1=0.9938
+2026-11-18 12:44:50,180 | INFO | POST /predict/00000087  received
+2026-11-18 12:44:56,200 | INFO | POST /predict/00000087  done in 5.52s | arcs=454 | F1=0.9977 P=1.0000 R=0.9954 RMF=0.0046 top1=1.0000
+2026-11-18 12:44:58,273 | INFO | POST /predict/00000094  received
+2026-11-18 12:45:01,673 | INFO | POST /predict/00000094  done in 2.86s | arcs=602 | F1=0.9985 P=0.9979 R=0.9990 RMF=0.0030 top1=0.9949

@@ -1,0 +1,26 @@
+{
+  "trips": 10,
+  "observations": 4382,
+  "candidate_rows": 33809,
+  "candidate_miss_rate": 0.0006846188954815153,
+  "pipeline_mean": {
+    "classifier + HMM (final)": {
+      "f1": 0.9955420250771667,
+      "precision": 0.9948365003845266,
+      "recall": 0.996258158341058,
+      "rmf": 0.008938138634544571,
+      "arc_acc": 0.9677596073228004,
+      "pointwise_top1": 0.9893136757215191,
+      "route_connectivity": 1.0
+    },
+    "classifier only": {
+      "f1": 0.7767274208402541,
+      "precision": 0.7226648933115258,
+      "recall": 0.9954070349452898,
+      "rmf": 2.1436886601123044,
+      "arc_acc": 0.6945761865143886,
+      "pointwise_top1": 0.9652511094095904,
+      "route_connectivity": 0.9998502662372619
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "sigma": 14.0,
+  "beta": 10.0,
+  "radius": 90.0,
+  "k": 12,
+  "min_spacing": 35.0,
+  "back_tol": 40.0,
+  "limit_mult": 2.0,
+  "limit_add": 400.0,
+  "uturn_penalty": 4.0,
+  "max_outlier_skip": 135,
+  "max_skip_dist": 2500.0,
+  "max_backtrack": 8,
+  "bridge_mult": 3.0,
+  "bridge_add": 1000.0
+}

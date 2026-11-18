@@ -1,0 +1,48 @@
+Two-laptop demo rehearsal, 2026-11-18 (evaluator trips, post-selection; nothing retrained or tuned)
+Laptop 1 (API, 10.30.202.192): python -m uvicorn api.app:app --host 0.0.0.0 --port 8000
+                                with PATHSNAP_TRIPS_DIR=data\evaluator_test
+Laptop 2 (UI, 10.30.202.137):   python ui/serve.py --port 5500, API box = http://10.30.202.192:8000
+Transcribed from the laptop-1 console screenshot. Inference times are higher than usual because
+validation-curve experiments were running on laptop 1 at the same time (offline run: 0.5-5.5 s per trip).
+
+C:\Users\ES SUKRUTH\OneDrive\Desktop\ml_hack>python -m uvicorn api.app:app --host 0.0.0.0 --port 8000
+2026-11-18 15:31:07,676 | INFO | model loaded: HistGradientBoosting (Bayesian-tuned) + HMM/Viterbi | trips dir: data\evaluator_test
+INFO:     Started server process [15200]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:62160 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.30.202.192:62817 - "GET /health HTTP/1.1" 200 OK
+2026-11-18 15:38:40,623 | INFO | GET /trips -> 10 trips
+INFO:     10.30.202.137:51721 - "GET /trips HTTP/1.1" 200 OK
+2026-11-18 15:38:43,658 | INFO | POST /predict/00000015  received
+2026-11-18 15:38:46,032 | INFO | POST /predict/00000030  received
+2026-11-18 15:38:54,383 | INFO | POST /predict/00000015  done in 9.13s | arcs=137 | F1=0.9962 P=0.9924 R=1.0000 RMF=0.0077 top1=0.9789
+INFO:     10.30.202.137:51721 - "POST /predict/00000015 HTTP/1.1" 200 OK
+2026-11-18 15:39:08,065 | INFO | POST /predict/00000030  done in 20.28s | arcs=337 | F1=0.9843 P=0.9802 R=0.9884 RMF=0.0316 top1=0.9761
+INFO:     10.30.202.137:49712 - "POST /predict/00000030 HTTP/1.1" 200 OK
+2026-11-18 15:39:20,215 | INFO | POST /predict/00000023  received
+2026-11-18 15:39:22,771 | INFO | POST /predict/00000023  done in 2.48s | arcs=76 | F1=0.9856 P=0.9831 R=0.9881 RMF=0.0289 top1=0.9851
+INFO:     10.30.202.137:64521 - "POST /predict/00000023 HTTP/1.1" 200 OK
+2026-11-18 15:40:09,481 | INFO | POST /predict/00000094  received
+2026-11-18 15:40:12,812 | INFO | POST /predict/00000073  received
+2026-11-18 15:40:43,499 | INFO | POST /predict/00000073  done in 27.25s | arcs=238 | F1=1.0000 P=1.0000 R=1.0000 RMF=0.0000 top1=0.9938
+INFO:     10.30.202.137:56050 - "POST /predict/00000073 HTTP/1.1" 200 OK
+2026-11-18 15:40:51,999 | INFO | POST /predict/00000094  done in 42.16s | arcs=602 | F1=0.9985 P=0.9979 R=0.9990 RMF=0.0030 top1=0.9949
+INFO:     10.30.202.137:53548 - "POST /predict/00000094 HTTP/1.1" 200 OK
+2026-11-18 15:41:06,701 | INFO | POST /predict/00000030  received
+2026-11-18 15:41:07,802 | INFO | POST /predict/00000030  done in 0.97s | arcs=337 | F1=0.9843 P=0.9802 R=0.9884 RMF=0.0316 top1=0.9761
+INFO:     10.30.202.137:60191 - "POST /predict/00000030 HTTP/1.1" 200 OK
+2026-11-18 15:41:12,010 | INFO | POST /predict/00000049  received
+2026-11-18 15:41:14,532 | INFO | POST /predict/00000049  done in 2.13s | arcs=409 | F1=0.9994 P=1.0000 R=0.9988 RMF=0.0012 top1=1.0000
+INFO:     10.30.202.137:60191 - "POST /predict/00000049 HTTP/1.1" 200 OK
+2026-11-18 15:41:17,927 | INFO | POST /predict/00000087  received
+2026-11-18 15:41:20,811 | INFO | POST /predict/00000087  done in 2.60s | arcs=454 | F1=0.9977 P=1.0000 R=0.9954 RMF=0.0046 top1=1.0000
+INFO:     10.30.202.137:60191 - "POST /predict/00000087 HTTP/1.1" 200 OK
+2026-11-18 15:41:24,587 | INFO | POST /predict/00000030  received
+2026-11-18 15:41:25,754 | INFO | POST /predict/00000030  done in 1.04s | arcs=337 | F1=0.9843 P=0.9802 R=0.9884 RMF=0.0316 top1=0.9761
+INFO:     10.30.202.137:60191 - "POST /predict/00000030 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15200]
