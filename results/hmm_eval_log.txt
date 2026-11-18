@@ -1,0 +1,29 @@
+{'emission_weight': 1.0, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9836264495691254), 'train_rmf': np.float64(0.034319679312252965), 'train_pointwise_top1': np.float64(0.9771688896079759), 'secs': 19.3635835647583}
+{'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9838044056997898), 'train_rmf': np.float64(0.03394478777147486), 'train_pointwise_top1': np.float64(0.9770998202421447), 'secs': 18.413588047027588}
+{'emission_weight': 2.0, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9831319026667453), 'train_rmf': np.float64(0.035469761340157765), 'train_pointwise_top1': np.float64(0.9763225089622336), 'secs': 18.668357133865356}
+{'emission_weight': 3.0, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9827558699672819), 'train_rmf': np.float64(0.03632266040743335), 'train_pointwise_top1': np.float64(0.9763230679149778), 'secs': 18.05536651611328}
+{'emission_weight': 5.0, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9813873744248245), 'train_rmf': np.float64(0.039170336410742565), 'train_pointwise_top1': np.float64(0.975712635523555), 'secs': 18.596259832382202}
+{'emission_weight': 0.5, 'beta': 5.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9835108841299732), 'train_rmf': np.float64(0.03447146690666311), 'train_pointwise_top1': np.float64(0.9756094793260189), 'secs': 18.239089488983154}
+{'emission_weight': 0.5, 'beta': 20.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9833443211800621), 'train_rmf': np.float64(0.03487962673510169), 'train_pointwise_top1': np.float64(0.9767084460008538), 'secs': 19.334492683410645}
+{'emission_weight': 0.5, 'beta': 40.0, 'uturn_penalty': 4.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9835232444137478), 'train_rmf': np.float64(0.03457221619668402), 'train_pointwise_top1': np.float64(0.9769532350657364), 'secs': 15.127776622772217}
+{'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 0.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9827798187091797), 'train_rmf': np.float64(0.036068739354429454), 'train_pointwise_top1': np.float64(0.9761335342318483), 'secs': 14.439449548721313}
+{'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 8.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.9835746866222876), 'train_rmf': np.float64(0.03439222952377969), 'train_pointwise_top1': np.float64(0.976755122697365), 'secs': 14.63794493675232}
+{'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 15.0, 'back_tol': 40.0, 'train_route_f1': np.float64(0.983378825059706), 'train_rmf': np.float64(0.034790824926502886), 'train_pointwise_top1': np.float64(0.9766107113388308), 'secs': 15.08877444267273}
+{'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 20.0, 'train_route_f1': np.float64(0.98279145727637), 'train_rmf': np.float64(0.03601839850344496), 'train_pointwise_top1': np.float64(0.9767656392443473), 'secs': 15.849187135696411}
+{'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 60.0, 'train_route_f1': np.float64(0.9838044056997898), 'train_rmf': np.float64(0.03394478777147486), 'train_pointwise_top1': np.float64(0.9770998202421447), 'secs': 14.653507947921753}
+best decoder {'emission_weight': 0.5, 'beta': 10.0, 'uturn_penalty': 4.0, 'back_tol': 40.0} 0.9838044056997898
+train clf {'f1': 0.7331, 'precision': 0.6492, 'recall': 0.9921, 'rmf': 1.696, 'pointwise_top1': 0.9517, 'route_connectivity': 0.9994, 'obs_continuity': 0.7935}
+train geo {'f1': 0.9838, 'precision': 0.9794, 'recall': 0.9891, 'rmf': 0.0339, 'pointwise_top1': 0.9546, 'route_connectivity': 1.0, 'obs_continuity': 0.817}
+train hmm {'f1': 0.9838, 'precision': 0.9794, 'recall': 0.9891, 'rmf': 0.0339, 'pointwise_top1': 0.9771, 'route_connectivity': 1.0, 'obs_continuity': 0.8179}
+student_test clf {'f1': 0.7617, 'precision': 0.6714, 'recall': 0.9937, 'rmf': 1.1907, 'pointwise_top1': 0.9611, 'route_connectivity': 0.9985, 'obs_continuity': 0.8054}
+student_test geo {'f1': 0.9936, 'precision': 0.9927, 'recall': 0.9945, 'rmf': 0.0129, 'pointwise_top1': 0.9648, 'route_connectivity': 1.0, 'obs_continuity': 0.8284}
+student_test hmm {'f1': 0.9925, 'precision': 0.9915, 'recall': 0.9936, 'rmf': 0.0151, 'pointwise_top1': 0.9864, 'route_connectivity': 1.0, 'obs_continuity': 0.8284}
+                       f1  precision  recall     rmf  pointwise_top1  route_connectivity  obs_continuity  n_chains  decode_secs
+split        mode                                                                                                              
+student_test clf   0.7617     0.6714  0.9937  1.1907          0.9611              0.9985          0.8054     1.000       1.1436
+             geo   0.9936     0.9927  0.9945  0.0129          0.9648              1.0000          0.8284     1.000       0.2674
+             hmm   0.9925     0.9915  0.9936  0.0151          0.9864              1.0000          0.8284     1.000       0.2508
+train        clf   0.7331     0.6492  0.9921  1.6960          0.9517              0.9994          0.7935     1.000       8.9267
+             geo   0.9838     0.9794  0.9891  0.0339          0.9546              1.0000          0.8170     1.025       0.4267
+             hmm   0.9838     0.9794  0.9891  0.0339          0.9771              1.0000          0.8179     1.025       0.4524
+wrote artifacts/final_config.json

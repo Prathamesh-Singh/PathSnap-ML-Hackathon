@@ -1,0 +1,9 @@
+min_samples_leaf=1  CV Top-1=0.9630 (+/-0.0140)  CV F1=0.9745  train Top-1=0.9958  train F1=1.0000  (527s)
+min_samples_leaf=2  CV Top-1=0.9632 (+/-0.0140)  CV F1=0.9743  train Top-1=0.9925  train F1=0.9935  (238s)
+min_samples_leaf=5  CV Top-1=0.9624 (+/-0.0141)  CV F1=0.9738  train Top-1=0.9760  train F1=0.9838  (646s)
+min_samples_leaf=10  CV Top-1=0.9617 (+/-0.0144)  CV F1=0.9734  train Top-1=0.9664  train F1=0.9789  (177s)
+min_samples_leaf=25  CV Top-1=0.9603 (+/-0.0153)  CV F1=0.9718  train Top-1=0.9597  train F1=0.9739  (356s)
+min_samples_leaf=50  CV Top-1=0.9588 (+/-0.0151)  CV F1=0.9697  train Top-1=0.9568  train F1=0.9705  (205s)
+min_samples_leaf=100  CV Top-1=0.9568 (+/-0.0160)  CV F1=0.9674  train Top-1=0.9544  train F1=0.9675  (337s)
+saved C:\Users\ES SUKRUTH\OneDrive\Desktop\ml_hack\results\figures\sweep_RandomForest.png
+best min_samples_leaf = 2 (CV Top-1 0.9632)

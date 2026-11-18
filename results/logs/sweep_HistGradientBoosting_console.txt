@@ -1,0 +1,8 @@
+max_iter=25  CV Top-1=0.9621 (+/-0.0139)  CV F1=0.9742  train Top-1=0.9596  train F1=0.9736  (626s)
+max_iter=50  CV Top-1=0.9644 (+/-0.0130)  CV F1=0.9746  train Top-1=0.9635  train F1=0.9758  (862s)
+max_iter=100  CV Top-1=0.9648 (+/-0.0126)  CV F1=0.9748  train Top-1=0.9655  train F1=0.9772  (524s)
+max_iter=200  CV Top-1=0.9648 (+/-0.0126)  CV F1=0.9748  train Top-1=0.9655  train F1=0.9772  (475s)
+max_iter=400  CV Top-1=0.9648 (+/-0.0126)  CV F1=0.9748  train Top-1=0.9655  train F1=0.9772  (14s)
+max_iter=800  CV Top-1=0.9648 (+/-0.0126)  CV F1=0.9748  train Top-1=0.9655  train F1=0.9772  (14s)
+saved C:\Users\ES SUKRUTH\OneDrive\Desktop\ml_hack\results\figures\sweep_HistGradientBoosting.png
+best max_iter = 100 (CV Top-1 0.9648)

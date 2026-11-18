@@ -1,0 +1,60 @@
+F1=0.9713 RMF=0.0611 P=0.9568 R=0.9881  {}  (23s)
+--- round 1
+F1=0.9701 RMF=0.0640 P=0.9545 R=0.9882  {'sigma': 5.0}  (17s)
+F1=0.9708 RMF=0.0623 P=0.9557 R=0.9882  {'sigma': 6.5}  (17s)
+F1=0.9719 RMF=0.0599 P=0.9579 R=0.9879  {'sigma': 10.0}  (16s)
+F1=0.9723 RMF=0.0589 P=0.9585 R=0.9881  {'sigma': 14.0}  (17s)
+best so far F1=0.9723: sigma=14.0
+F1=0.9708 RMF=0.0624 P=0.9557 R=0.9881  {'sigma': 14.0, 'beta': 2.0}  (17s)
+F1=0.9718 RMF=0.0600 P=0.9575 R=0.9883  {'sigma': 14.0, 'beta': 4.0}  (16s)
+F1=0.9726 RMF=0.0580 P=0.9592 R=0.9880  {'sigma': 14.0, 'beta': 10.0}  (16s)
+F1=0.9716 RMF=0.0602 P=0.9577 R=0.9876  {'sigma': 14.0, 'beta': 20.0}  (16s)
+F1=0.9708 RMF=0.0621 P=0.9562 R=0.9876  {'sigma': 14.0, 'beta': 40.0}  (16s)
+best so far F1=0.9726: beta=10.0
+F1=0.9712 RMF=0.0614 P=0.9568 R=0.9877  {'sigma': 14.0, 'beta': 10.0, 'radius': 40.0}  (41s)
+F1=0.9719 RMF=0.0599 P=0.9578 R=0.9882  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0}  (20s)
+best so far F1=0.9726: radius=60.0
+F1=0.9652 RMF=0.0745 P=0.9464 R=0.9870  {'sigma': 14.0, 'beta': 10.0, 'k': 6}  (19s)
+F1=0.9791 RMF=0.0441 P=0.9690 R=0.9907  {'sigma': 14.0, 'beta': 10.0, 'k': 12}  (59s)
+best so far F1=0.9791: k=12
+F1=0.9793 RMF=0.0446 P=0.9668 R=0.9939  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 10.0}  (184s)
+F1=0.9828 RMF=0.0360 P=0.9775 R=0.9890  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0}  (51s)
+best so far F1=0.9828: min_spacing=35.0
+F1=0.9827 RMF=0.0362 P=0.9771 R=0.9892  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 10.0}  (26s)
+F1=0.9838 RMF=0.0339 P=0.9794 R=0.9891  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (45s)
+best so far F1=0.9838: back_tol=40.0
+F1=0.9828 RMF=0.0361 P=0.9776 R=0.9888  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 0.0}  (17s)
+F1=0.9834 RMF=0.0347 P=0.9788 R=0.9888  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 8.0}  (54s)
+F1=0.9830 RMF=0.0355 P=0.9783 R=0.9886  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 15.0}  (182s)
+F1=0.9825 RMF=0.0366 P=0.9778 R=0.9880  {'sigma': 14.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 30.0}  (133s)
+best so far F1=0.9838: uturn_penalty=4.0
+--- round 2
+F1=0.9830 RMF=0.0356 P=0.9769 R=0.9901  {'sigma': 5.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (22s)
+F1=0.9834 RMF=0.0347 P=0.9779 R=0.9899  {'sigma': 6.5, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (18s)
+F1=0.9836 RMF=0.0344 P=0.9784 R=0.9897  {'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (19s)
+F1=0.9836 RMF=0.0344 P=0.9787 R=0.9892  {'sigma': 10.0, 'beta': 10.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (17s)
+best so far F1=0.9838: sigma=14.0
+F1=0.9829 RMF=0.0358 P=0.9786 R=0.9879  {'sigma': 14.0, 'beta': 2.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (18s)
+F1=0.9833 RMF=0.0349 P=0.9790 R=0.9884  {'sigma': 14.0, 'beta': 4.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (38s)
+F1=0.9838 RMF=0.0340 P=0.9795 R=0.9889  {'sigma': 14.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (25s)
+F1=0.9838 RMF=0.0341 P=0.9787 R=0.9897  {'sigma': 14.0, 'beta': 20.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (36s)
+F1=0.9830 RMF=0.0355 P=0.9776 R=0.9893  {'sigma': 14.0, 'beta': 40.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (23s)
+best so far F1=0.9838: beta=10.0
+F1=0.9842 RMF=0.0327 P=0.9800 R=0.9890  {'sigma': 14.0, 'beta': 10.0, 'radius': 40.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (24s)
+F1=0.9853 RMF=0.0308 P=0.9811 R=0.9905  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0}  (33s)
+best so far F1=0.9853: radius=90.0
+F1=0.9751 RMF=0.0520 P=0.9658 R=0.9857  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 6, 'min_spacing': 35.0, 'back_tol': 40.0}  (24s)
+F1=0.9816 RMF=0.0386 P=0.9759 R=0.9883  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'min_spacing': 35.0, 'back_tol': 40.0}  (27s)
+best so far F1=0.9853: k=12
+F1=0.9796 RMF=0.0444 P=0.9691 R=0.9925  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 10.0, 'back_tol': 40.0}  (110s)
+F1=0.9831 RMF=0.0356 P=0.9759 R=0.9914  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'back_tol': 40.0}  (37s)
+best so far F1=0.9853: min_spacing=35.0
+F1=0.9842 RMF=0.0332 P=0.9788 R=0.9904  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 10.0}  (28s)
+F1=0.9843 RMF=0.0328 P=0.9792 R=0.9904  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0}  (29s)
+best so far F1=0.9853: back_tol=40.0
+F1=0.9841 RMF=0.0335 P=0.9790 R=0.9900  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 0.0}  (53s)
+F1=0.9850 RMF=0.0315 P=0.9806 R=0.9902  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 8.0}  (334s)
+F1=0.9846 RMF=0.0323 P=0.9800 R=0.9900  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 15.0}  (156s)
+F1=0.9840 RMF=0.0334 P=0.9797 R=0.9892  {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'uturn_penalty': 30.0}  (41s)
+best so far F1=0.9853: uturn_penalty=4.0
+saved params.json {'sigma': 14.0, 'beta': 10.0, 'radius': 90.0, 'k': 12, 'min_spacing': 35.0, 'back_tol': 40.0, 'limit_mult': 2.0, 'limit_add': 400.0, 'uturn_penalty': 4.0, 'max_outlier_skip': 135, 'max_skip_dist': 2500.0, 'max_backtrack': 8, 'bridge_mult': 3.0, 'bridge_add': 1000.0}
