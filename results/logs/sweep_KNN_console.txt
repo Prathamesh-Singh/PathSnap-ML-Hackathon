@@ -1,0 +1,14 @@
+fold 1/5 done (140s)
+fold 2/5 done (375s)
+fold 3/5 done (127s)
+fold 4/5 done (179s)
+fold 5/5 done (432s)
+n_neighbors=1  CV Top-1=0.9172 (+/-0.0182)  CV F1=0.9477  train Top-1=0.9958  train F1=1.0000
+n_neighbors=3  CV Top-1=0.9357 (+/-0.0175)  CV F1=0.9565  train Top-1=0.9958  train F1=1.0000
+n_neighbors=7  CV Top-1=0.9451 (+/-0.0160)  CV F1=0.9597  train Top-1=0.9958  train F1=1.0000
+n_neighbors=15  CV Top-1=0.9493 (+/-0.0152)  CV F1=0.9603  train Top-1=0.9958  train F1=1.0000
+n_neighbors=31  CV Top-1=0.9509 (+/-0.0143)  CV F1=0.9594  train Top-1=0.9958  train F1=1.0000
+n_neighbors=63  CV Top-1=0.9505 (+/-0.0142)  CV F1=0.9578  train Top-1=0.9958  train F1=1.0000
+n_neighbors=127  CV Top-1=0.9500 (+/-0.0142)  CV F1=0.9551  train Top-1=0.9958  train F1=1.0000
+saved C:\Users\ES SUKRUTH\OneDrive\Desktop\ml_hack\results\figures\sweep_KNN.png
+best kneighborsclassifier__n_neighbors = 31 (CV Top-1 0.9509)

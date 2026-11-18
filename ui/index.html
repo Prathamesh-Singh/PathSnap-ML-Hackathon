@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PathSnap Evaluator</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root { --bg:#f5f6f8; --panel:#fff; --ink:#1f2933; --muted:#6b7785; --line:#d9dee4;
+          --accent:#e76f51; --gps:#264653; --ok:#2a9d8f; --net:#8a94a3; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:12px 16px; background:var(--panel); border-bottom:1px solid var(--line);
+           display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  header h1 { font-size:18px; margin:0 12px 0 0; }
+  input { padding:6px 8px; border:1px solid var(--line); border-radius:4px; width:240px; }
+  button { padding:6px 12px; border:1px solid var(--line); border-radius:4px; background:#fff; cursor:pointer; }
+  button.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+  button.trip.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  main { display:grid; grid-template-columns: 300px 1fr; height: calc(100vh - 58px); }
+  aside { background:var(--panel); border-right:1px solid var(--line); padding:12px; overflow:auto; }
+  #trips { display:grid; grid-template-columns: 1fr 1fr; gap:6px; margin-bottom:12px; }
+  #map, #canvas { width:100%; height:100%; }
+  #canvas { display:none; background:#fff; }
+  table { width:100%; border-collapse:collapse; }
+  td { padding:4px 2px; border-bottom:1px solid var(--line); }
+  td:last-child { text-align:right; font-variant-numeric: tabular-nums; font-weight:600; }
+  .muted { color:var(--muted); font-size:12px; }
+  .status { margin:8px 0; min-height:20px; }
+  .err { color:#b42318; }
+  .legend span { display:inline-block; width:14px; height:4px; margin-right:6px; vertical-align:middle; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; height:auto; } #map,#canvas { height:60vh; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>PathSnap</h1>
+  <label>API <input id="api" placeholder="http://192.168.x.x:8000"></label>
+  <button class="primary" id="connect">Load trips</button>
+  <span class="status" id="status"></span>
+</header>
+<main>
+  <aside>
+    <div class="muted">Evaluation trips</div>
+    <div id="trips"></div>
+    <div class="legend muted">
+      <div><span style="background:var(--gps)"></span>GPS fixes</div>
+      <div><span style="background:var(--accent)"></span>Predicted route</div>
+      <div><span style="background:var(--net)"></span>Road network (trip map)</div>
+    </div>
+    <p class="muted">Map style (top-right of the map): Streets shows roads, names and building
+       outlines when zoomed in; Satellite shows the real buildings. If a tile server is blocked the
+       page switches style by itself, and the trip's own road network is always drawn.</p>
+    <h3 id="title" style="margin:14px 0 6px">No trip selected</h3>
+    <table id="metrics"></table>
+    <p class="muted">Metrics are computed on the API server against its own reference data.
+       The reference route is not sent to this page.</p>
+  </aside>
+  <section style="position:relative">
+    <div id="map"></div>
+    <canvas id="canvas"></canvas>
+  </section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const apiInput = $("api");
+try { apiInput.value = localStorage.getItem("pathsnap_api") || "http://localhost:8000"; } catch (e) { apiInput.value = "http://localhost:8000"; }
+
+let map = null, layer = null, netLayer = null, overlays = null;
+const haveLeaflet = typeof L !== "undefined";
+if (haveLeaflet) {
+  map = L.map("map", { preferCanvas: true, maxZoom: 19 }).setView([20, 0], 2);
+  const OSM = "&copy; OpenStreetMap contributors", ESRI = "Tiles &copy; Esri, Maxar, Earthstar Geographics";
+  const esri = s => `https://server.arcgisonline.com/ArcGIS/rest/services/${s}/MapServer/tile/{z}/{y}/{x}`;
+  // base maps in fallback order: if one is blocked on the network, the next one is tried
+  const bases = [
+    ["Streets (roads + buildings)", L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { attribution: OSM, maxZoom: 19 })],
+    ["Satellite + road names", L.layerGroup([
+        L.tileLayer(esri("World_Imagery"), { attribution: ESRI, maxZoom: 19 }),
+        L.tileLayer(esri("Reference/World_Transportation"), { maxZoom: 19 }),
+        L.tileLayer(esri("Reference/World_Boundaries_and_Places"), { maxZoom: 19 })])],
+    ["Streets (colourful)", L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+        { attribution: OSM + ", &copy; CARTO", maxZoom: 19 })],
+    ["Light", L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        { attribution: OSM + ", &copy; CARTO", maxZoom: 19 })],
+  ];
+  let current = 0, loaded = false, errors = 0;
+  const tilesOf = g => g instanceof L.TileLayer ? [g] : g.getLayers();
+  bases.forEach(([name, g], i) => tilesOf(g).forEach(t => {
+    t.on("tileload", () => { if (i === current) loaded = true; });
+    t.on("tileerror", () => {
+      if (i !== current || loaded || ++errors < 6 || current + 1 >= bases.length) return;
+      map.removeLayer(g); current += 1; errors = 0;
+      bases[current][1].addTo(map);
+      setStatus("Map tiles blocked, switched to: " + bases[current][0]);
+    });
+  }));
+  map.on("baselayerchange", e => { current = bases.findIndex(b => b[1] === e.layer); loaded = false; errors = 0; });
+  bases[0][1].addTo(map);
+  netLayer = L.layerGroup().addTo(map);
+  layer = L.layerGroup().addTo(map);
+  overlays = { "Road network (trip map)": netLayer, "GPS fixes + predicted route": layer };
+  L.control.layers(Object.fromEntries(bases), overlays, { collapsed: false }).addTo(map);
+  L.control.scale().addTo(map);
+} else {
+  $("map").style.display = "none";
+  $("canvas").style.display = "block";
+}
+
+function setStatus(msg, err) { $("status").textContent = msg; $("status").className = "status" + (err ? " err" : ""); }
+function api() { return apiInput.value.replace(/\/+$/, ""); }
+
+$("connect").onclick = async () => {
+  try { localStorage.setItem("pathsnap_api", apiInput.value); } catch (e) {}
+  setStatus("Connecting...");
+  try {
+    const r = await fetch(api() + "/trips");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    const box = $("trips"); box.innerHTML = "";
+    data.trips.forEach(id => {
+      const b = document.createElement("button");
+      b.className = "trip"; b.textContent = id; b.onclick = () => runTrip(id, b);
+      box.appendChild(b);
+    });
+    setStatus(data.trips.length + " trips available");
+  } catch (e) { setStatus("Could not reach API: " + e.message, true); }
+};
+
+let latestRequest = 0;   // only the most recently clicked trip may update the page
+
+async function runTrip(id, btn) {
+  const token = ++latestRequest;
+  document.querySelectorAll("button.trip").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  setStatus("Running trip " + id + " on the API...");
+  $("title").textContent = "Trip " + id;
+  $("metrics").innerHTML = "";
+  const t0 = performance.now();
+  try {
+    const r = await fetch(api() + "/predict/" + id, { method: "POST" });
+    if (!r.ok) throw new Error("HTTP " + r.status + " " + await r.text());
+    const d = await r.json();
+    if (token !== latestRequest) return;   // a newer trip was clicked meanwhile: drop this late reply
+    draw(d);
+    showMetrics(d, (performance.now() - t0) / 1000);
+    setStatus("Trip " + id + " done");
+  } catch (e) { if (token === latestRequest) setStatus("Request failed: " + e.message, true); }
+}
+
+function showMetrics(d, roundTrip) {
+  const m = d.metrics || {};
+  const pct = v => v == null ? "n/a" : (100 * v).toFixed(2) + " %";
+  const rows = [
+    ["Route F1 (length-weighted)", pct(m.f1)],
+    ["Route precision", pct(m.precision)],
+    ["Route recall", pct(m.recall)],
+    ["Route mismatch fraction", pct(m.rmf)],
+    ["Arc sequence accuracy (LCS)", pct(m.arc_acc)],
+    ["Pointwise top-1 accuracy", pct(m.pointwise_top1)],
+    ["GPS fixes / observations", d.n_gps_fixes + " / " + d.n_observations],
+    ["Predicted route arcs", d.n_route_arcs],
+    ["Server inference time", d.inference_seconds.toFixed(2) + " s"],
+    ["Round trip", roundTrip.toFixed(2) + " s"],
+  ];
+  $("metrics").innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+}
+
+function draw(d) {
+  if (haveLeaflet) {
+    netLayer.clearLayers();
+    layer.clearLayers();
+    (d.network_latlon || []).forEach(seg => L.polyline(seg, { color: "#8a94a3", weight: 1.5, opacity: .8 }).addTo(netLayer));
+    d.gps_latlon.forEach(p => L.circleMarker(p, { radius: 2, color: "#264653", weight: 0, fillOpacity: .8 }).addTo(layer));
+    d.route_latlon.forEach(seg => L.polyline(seg, { color: "#e76f51", weight: 4 }).addTo(layer));
+    const all = d.gps_latlon.concat(d.route_latlon.flat());
+    map.fitBounds(L.latLngBounds(all), { padding: [20, 20] });
+  } else {
+    drawCanvas(d);
+  }
+}
+
+function drawCanvas(d) {
+  const c = $("canvas"), ctx = c.getContext("2d");
+  c.width = c.clientWidth; c.height = c.clientHeight;
+  const pts = d.gps_latlon.concat(d.route_latlon.flat());
+  const lats = pts.map(p => p[0]), lons = pts.map(p => p[1]);
+  const la0 = Math.min(...lats), la1 = Math.max(...lats), lo0 = Math.min(...lons), lo1 = Math.max(...lons);
+  const k = Math.cos((la0 + la1) / 2 * Math.PI / 180);
+  const s = Math.min((c.width - 40) / ((lo1 - lo0) * k || 1), (c.height - 40) / ((la1 - la0) || 1));
+  const X = p => 20 + (p[1] - lo0) * k * s, Y = p => c.height - 20 - (p[0] - la0) * s;
+  ctx.clearRect(0, 0, c.width, c.height);
+  ctx.strokeStyle = "#c3c9d1"; ctx.lineWidth = 1;
+  (d.network_latlon || []).forEach(([a, b]) => { ctx.beginPath(); ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); ctx.stroke(); });
+  ctx.strokeStyle = "#e76f51"; ctx.lineWidth = 3;
+  d.route_latlon.forEach(([a, b]) => { ctx.beginPath(); ctx.moveTo(X(a), Y(a)); ctx.lineTo(X(b), Y(b)); ctx.stroke(); });
+  ctx.fillStyle = "#264653";
+  d.gps_latlon.forEach(p => ctx.fillRect(X(p) - 1, Y(p) - 1, 2, 2));
+}
+</script>
+</body>
+</html>
