@@ -1,0 +1,163 @@
+Diya_R_Gowda_PES1UG24CS159> python experiments\train_models.py --models LogisticRegression GaussianNB --member "Diya R Gowda"
+=== LogisticRegression
+  fold 0: f1=0.9622 top1=0.9628  (0.8s)
+  fold 1: f1=0.9557 top1=0.9564  (0.8s)
+  fold 2: f1=0.9527 top1=0.9485  (0.8s)
+  fold 3: f1=0.9562 top1=0.9682  (0.8s)
+  fold 4: f1=0.9356 top1=0.9264  (0.8s)
+--- LogisticRegression summary
+  train_insample_f1_macro 0.9537
+  train_insample_top1    0.9522
+  cv_f1_macro            0.9525
+  cv_top1                0.9525
+  cv_log_loss            0.0723
+  test_accuracy          0.9785
+  test_precision_macro   0.9490
+  test_recall_macro      0.9636
+  test_f1_macro          0.9561
+  test_log_loss          0.0654
+  test_top1              0.9491
+  test_continuity        0.7888
+  fit_secs_full          0.9785
+  infer_secs_test        0.0140
+  confusion matrix (rows=true other/ref, cols=pred) [[32870, 525], [311, 5138]]
+=== GaussianNB
+  fold 0: f1=0.9096 top1=0.9589  (0.2s)
+  fold 1: f1=0.9094 top1=0.9438  (0.2s)
+  fold 2: f1=0.9131 top1=0.9413  (0.1s)
+  fold 3: f1=0.9115 top1=0.9564  (0.2s)
+  fold 4: f1=0.9035 top1=0.9215  (0.1s)
+--- GaussianNB summary
+  train_insample_f1_macro 0.9099
+  train_insample_top1    0.9448
+  cv_f1_macro            0.9094
+  cv_top1                0.9444
+  cv_log_loss            0.2913
+  test_accuracy          0.9530
+  test_precision_macro   0.8777
+  test_recall_macro      0.9603
+  test_f1_macro          0.9124
+  test_log_loss          0.2831
+  test_top1              0.9463
+  test_continuity        0.7992
+  fit_secs_full          0.1482
+  infer_secs_test        0.0264
+  confusion matrix (rows=true other/ref, cols=pred) [[31729, 1666], [161, 5288]]
+
+All models collected so far:
+                model        member  cv_f1_macro  cv_top1  cv_log_loss  test_f1_macro  test_top1  test_log_loss  test_continuity  infer_secs_test
+0          GaussianNB  Diya R Gowda       0.9094   0.9444       0.2913         0.9124     0.9463         0.2831           0.7992           0.0264
+1  LogisticRegression  Diya R Gowda       0.9525   0.9525       0.0723         0.9561     0.9491         0.0654           0.7888           0.0140
+PS C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159> python experiments\sweep_model.py --model LogisticRegression --member "Diya R Gowda"
+C=0.0001  CV Top-1=0.9488 (+/-0.0137)  CV F1=0.9121  train Top-1=0.9457  train F1=0.9228  (5s)
+C=0.001  CV Top-1=0.9529 (+/-0.0143)  CV F1=0.9463  train Top-1=0.9491  train F1=0.9465  (6s)
+C=0.01  CV Top-1=0.9526 (+/-0.0148)  CV F1=0.9516  train Top-1=0.9488  train F1=0.9520  (7s)
+C=0.1  CV Top-1=0.9524 (+/-0.0146)  CV F1=0.9525  train Top-1=0.9484  train F1=0.9530  (6s)
+C=1  CV Top-1=0.9525 (+/-0.0146)  CV F1=0.9525  train Top-1=0.9484  train F1=0.9532  (6s)
+C=10  CV Top-1=0.9525 (+/-0.0145)  CV F1=0.9525  train Top-1=0.9484  train F1=0.9532  (6s)
+C=100  CV Top-1=0.9525 (+/-0.0145)  CV F1=0.9525  train Top-1=0.9484  train F1=0.9532  (6s)
+saved C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159\results\figures\sweep_LogisticRegression.png
+best logisticregression__C = 0.001 (CV Top-1 0.9529)
+PS C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159> python experiments\sweep_model.py --model GaussianNB --member "Diya R Gowda"
+var_smoothing=1e-12  CV Top-1=0.9445 (+/-0.0133)  CV F1=0.9093  train Top-1=0.9343  train F1=0.9118  (3s)
+var_smoothing=1e-09  CV Top-1=0.9444 (+/-0.0133)  CV F1=0.9094  train Top-1=0.9342  train F1=0.9119  (3s)
+var_smoothing=1e-06  CV Top-1=0.9393 (+/-0.0138)  CV F1=0.9003  train Top-1=0.9297  train F1=0.9054  (3s)
+var_smoothing=0.001  CV Top-1=0.8808 (+/-0.0222)  CV F1=0.8877  train Top-1=0.8777  train F1=0.8878  (3s)
+var_smoothing=0.1  CV Top-1=0.7091 (+/-0.0510)  CV F1=0.5047  train Top-1=0.7056  train F1=0.5226  (3s)
+saved C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159\results\figures\sweep_GaussianNB.png
+best var_smoothing = 1e-12 (CV Top-1 0.9445)
+PS C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159> python experiments\eda.py
+train 00000001
+train 00000002
+train 00000003
+train 00000004
+train 00000005
+train 00000006
+train 00000008
+train 00000010
+train 00000011
+train 00000012
+train 00000013
+train 00000014
+train 00000016
+train 00000018
+train 00000019
+train 00000020
+train 00000021
+train 00000022
+train 00000024
+train 00000025
+train 00000026
+train 00000027
+train 00000028
+train 00000029
+train 00000031
+train 00000032
+train 00000033
+train 00000034
+train 00000035
+train 00000036
+train 00000037
+train 00000038
+train 00000039
+train 00000041
+train 00000042
+train 00000043
+train 00000044
+train 00000045
+train 00000046
+train 00000047
+train 00000048
+train 00000050
+train 00000051
+train 00000053
+train 00000054
+train 00000055
+train 00000057
+train 00000058
+train 00000060
+train 00000061
+train 00000062
+train 00000063
+train 00000064
+train 00000066
+train 00000068
+train 00000069
+train 00000070
+train 00000071
+train 00000072
+train 00000074
+train 00000075
+train 00000078
+train 00000079
+train 00000080
+train 00000081
+train 00000082
+train 00000083
+train 00000084
+train 00000085
+train 00000086
+train 00000088
+train 00000089
+train 00000090
+train 00000092
+train 00000093
+train 00000095
+train 00000096
+train 00000097
+train 00000098
+train 00000099
+student_test 00000000
+student_test 00000007
+student_test 00000009
+student_test 00000040
+student_test 00000052
+student_test 00000056
+student_test 00000065
+student_test 00000076
+student_test 00000077
+student_test 00000091
+student_test    {'trips': 10, 'gps_fixes': 19160, 'fixes_per_t...
+train           {'trips': 80, 'gps_fixes': 208417, 'fixes_per_...
+PS C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159> python experiments\folium_maps.py --split train --trips 00000003 --eda
+saved C:\Users\Diya\Documents\Semester 5\ML\Hackathon\PathSnap_Diya_R_Gowda_PES1UG24CS159\PathSnap_Diya_R_Gowda_PES1UG24CS159\results\maps\train_00000003_eda.html
